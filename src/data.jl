@@ -549,13 +549,13 @@ function generate_planar_grid_mnfp(;
     demand_density::Float64=0.1,
     random_capacity_slack::Float64 = 0.2, # how much extra capacity to add randomly
     base_capacity_slack::Float64 = 1.0, # how much capacity to add overall
-    seed::Union{Int64,Nothing}=nothing
+    seed::Union{Int64,Nothing}=nothing,
+    raw_data::Bool=false,
     )
 
     #################################################################################################### data setup
     guaranteed_planar::Bool = true
 
-    seed::Union{Int64,Nothing}=nothing
     if !isnothing(seed)
         Random.seed!(seed)
     end
@@ -1092,7 +1092,9 @@ function generate_planar_grid_mnfp(;
         u[1, i] += 1.0
     end
 
-    return  (vertex_amount=vertex_amount,
+    if raw_data
+        return (
+            vertex_amount=vertex_amount,
             bhratio=bhratio,
             K=K,
             capacity_range=capacity_range,
@@ -1121,7 +1123,23 @@ function generate_planar_grid_mnfp(;
             random_capacity_slack=random_capacity_slack,
             base_capacity_slack=base_capacity_slack,
             d=d,
-            arcs_pruned=arcs_pruned)
+            arcs_pruned=arcs_pruned
+        )
+    else
+        MnfpData(
+            vertex_amount,
+            A,
+            u,
+            c,
+            d;
+            locs_x=locs_x,
+            locs_y=locs_y,
+            bhratio=bhratio,
+            guaranteed_planar=guaranteed_planar,
+            cols=cols,
+            rows=rows,
+        )
+    end
 end
 
 function save_instance(mnfp_instance::MnfpData, mod::String, instance_base_path::String, instance_base_img_path::String, instance_counter::Int64; multi_k::Bool=true)

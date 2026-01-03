@@ -1,0 +1,13 @@
+name = "MultiFlowSolver"
+uuid = "0b348230-5aa4-480a-91ab-d06d9d41a8e5"
+authors = ["Daniel Araujo <dc_junior@id.uff.br>"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

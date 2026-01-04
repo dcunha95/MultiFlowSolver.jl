@@ -10,7 +10,7 @@ MultiFlowSolver is a package offering functionality to solve the Multicommodity 
 
 We assume nonnegative arc costs, which is reasonable for practical applications. 
 
-The figure below showcases the solution for a toy instance (Figure 2.2) with 2 commodities, found in the book [Optimizing with Column Generation](https://optimizingwithcolumngeneration.github.io/)
+The figure below showcases the solution for a toy instance with 2 commodities (see Figure 2.2 in the book [Optimizing with Column Generation](https://optimizingwithcolumngeneration.github.io/)).
 
 Commodity 1 | Commodity 2 | Total Flow
 :---:|:---:|:---:

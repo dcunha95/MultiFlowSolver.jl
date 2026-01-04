@@ -132,7 +132,7 @@ The tables below showcase statistics and details over the total time taken to so
 | 75%  |   60    |              51    |            11    |                       14    |                                     14    |                                            14    |
 | max  | 3272    |            1021    |           915    |                      113    |                                     94    |                                            72    |
 
-### Detailed Statistics
+### Instance Results
 
 |                   | CPLEX   |   CGA + Bellman F. |   Parallel CPLEX |   Parallel CGA + Bellman F. |   Parallel CGA + Bellman F. + C. Cleaning |   Parallel CGA + Bellman F. + Enum + C. Cleaning |    K |   V |
 |:------------------|:--------|-------------------:|-----------------:|----------------------------:|------------------------------------------:|-------------------------------------------------:|-----:|----:|
